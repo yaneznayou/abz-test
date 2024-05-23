@@ -20,10 +20,8 @@ npm install
 Usage
 To run the application in development mode:
 
- ```sh
-
 npm run dev
-The app will be available at: https://github.com/yourusername/abz-test.git
+The app will be available at: http://localhost:5173/
 
 Deployment
 The application is deployed on GitHub Pages. You can view it at the following link:
