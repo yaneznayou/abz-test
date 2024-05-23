@@ -26,7 +26,7 @@ The app will be available at: http://localhost:5173/
 Deployment
 The application is deployed on GitHub Pages. You can view it at the following link:
 
-Demo - https://github.com/yourusername/abz-test.git
+Demo - https://yaneznayou.github.io/abz-test/
 
 Features
 POST requests: Allows users to register via a form.
