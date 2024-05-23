@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# ABZ Test Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React TypeScript and Tailwind CSS application for handling POST and GET requests. It allows users to register via a form and view a list of users fetched from an API.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository:
 
-## Expanding the ESLint configuration
+   ```sh
+   git clone https://github.com/yourusername/abz-test.git
+Navigate to the project directory:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+ ```sh
+cd abz-test
+Install the dependencies:
 
-- Configure the top-level `parserOptions` property like this:
+ ```sh
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+npm install
+Usage
+To run the application in development mode:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ ```sh
+
+npm run dev
+The app will be available at: https://github.com/yourusername/abz-test.git
+
+Deployment
+The application is deployed on GitHub Pages. You can view it at the following link:
+
+Demo - https://github.com/yourusername/abz-test.git
+
+Features
+POST requests: Allows users to register via a form.
+GET requests: Fetches and displays a list of users.
+Form Validation: Displays error messages for incorrectly filled form fields.
+Tailwind CSS: Used for styling the application.
+React Hooks: Used for managing state and side effects.
+Author
+github.com/yaneznayou
+
+
+ 
