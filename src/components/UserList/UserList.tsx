@@ -42,12 +42,12 @@ export const UsersList: React.FC<UsersListProps> = ({ updateTrigger }) => {
       <h2 className='text-[40px] text-center' id="users">Working with GET request</h2>
       <div className="mt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
         {users.map(user => (
-          <div key={user.id} className='bg-white text-center max-w-[328px] container mx-auto mb-6 md:mx-2 box-border'>
+          <div key={user.id} className='bg-white text-center w-[328px] lg:w-[370px] mx-auto mb-6 box-border'>
             <img src={user.photo} alt={user.name} className='rounded-full mx-auto mt-5' />
             <h3 className='mt-5'>{user.name}</h3>
             <p className='mt-5'>{user.position}</p>
             <p className='truncate max-w-full'>{user.email}</p>
-            <p>{user.phone}</p>
+            <p className='mb-5'>{user.phone}</p>
           </div>
         ))}
       </div>
