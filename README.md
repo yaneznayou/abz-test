@@ -10,23 +10,21 @@ This is a React TypeScript and Tailwind CSS application for handling POST and GE
    git clone https://github.com/yourusername/abz-test.git
 Navigate to the project directory:
 
- ```sh
-cd abz-test
+   cd abz-test
 Install the dependencies:
+   npm install
 
- ```sh
+# Usage
 
-npm install
-Usage
 To run the application in development mode:
 
 npm run dev
 The app will be available at: http://localhost:5173/
 
-Deployment
+# Deployment
 The application is deployed on GitHub Pages. You can view it at the following link:
 
-Demo - [https://yaneznayou.github.io/abz-test/](https://abz-test-gc1qlacfb-yaneznayous-projects.vercel.app)]
+Demo -[https://abz-test-gc1qlacfb-yaneznayous-projects.vercel.app]
 
 Features
 POST requests: Allows users to register via a form.
