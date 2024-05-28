@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import InputMask from 'react-input-mask';
 
 interface Position {
   id: number;
@@ -90,7 +89,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onRegister }
 
       if (errorData.fails) {
         for (const [field, messages] of Object.entries(errorData.fails)) {
-          serverErrors[field as keyof Errors] = (messages as string[])[0]; 
+          serverErrors[field as keyof Errors] = messages as string[][0]; 
         }
       }
 
@@ -137,71 +136,65 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onRegister }
             {errors.email && <p className='text-red-500'>{errors.email}</p>}
           </div>
           <div className='flex flex-col mt-[50px]'>
-            <InputMask
-              mask="+389999999999"
+            <input
+              type="tel"
+              id='tel'
+              name="phone"
+              required
+              placeholder='Phone'
               value={phone}
+              className={`md:w-[380px] pl-4 border ${errors.phone ? 'border-red-500' : 'border-gray-border'} rounded-md bg-gray-bg py-[7px]`}
               onChange={(e) => setPhone(e.target.value)}
-            >
-              {(inputProps: any) => (
-                <input
-                  {...inputProps}
-                  type="tel"
-                  id='tel'
-                  name="phone"
-                  required
-                  placeholder='Phone'
-                  className={`md:w-[380px] pl-4 border ${errors.phone ? 'border-red-500' : 'border-gray-border'} rounded-md bg-gray-bg py-[7px]`}
-                  style={{ paddingLeft: '16px' }}
-                />
-              )}
-            </InputMask>
-            {errors.phone && <p className='text-red-500'>{errors.phone}</p>}
-            <label htmlFor='tel' className='text-[12px] text-gray-border ml-3 -mt-1'>+38 (XXX) XXX - XX - XX</label>
-          </div>
-          <div>
-            <label className='text-[16px] leading-7 mt-6'>Select your position</label>
-            {positions.map(position => (
-              <div key={position.id} className='-mt-2'>
-                <input
-                  type="radio"
-                  id={`position-${position.id}`}
-                  name="position"
-                  value={position.id}
-                  required
-                  className='leading-7 l-2'
-                  onChange={() => setPosition(position.id)}
-                />
-                <label htmlFor={`position-${position.id}`} className='ml-3'>{position.name}</label>
-              </div>
-            ))}
-          </div>
-          <div className='mt-4'>
-            <div className="relative mt-2">
-              <input
-                type="file"
-                name="photo"
-                id="photo"
-                required
-                onChange={handlePhotoChange}
-                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              style={{ paddingLeft:'16px' }}
               />
-              <div className={`flex items-center space-x-4 mb-12 border ${errors.photo ? 'border-red-500' : 'border-gray-border'}`}>
-                <button type="button" className="py-2 px-4 border border-gray-border text-gray-border rounded-md">Upload</button>
-                <span className="w-full text-gray-500 py-[7px]">{photo ? photo.name : 'Upload your photo'}</span>
-              </div>
-              {errors.photo && <p className='text-red-500'>{errors.photo}</p>}
+              {errors.phone && <p className='text-red-500'>{errors.phone}</p>}
+              <label htmlFor='tel' className='text-[12px] text-gray-border ml-3 -mt-1'>+38 (XXX) XXX - XX - XX</label>
             </div>
-          </div>
-          <div className='text-center mt-4'>
-            <button
-              type='submit'
-              className="px-[22px] bg-gray-bottom rounded-2xl mb-24 text-white hover:bg-gray-700 active:bg-gray-800"
-            >
-              Sign up
-            </button>
-          </div>
-        </form>
+            <div>
+              <label className='text-[16px] leading-7 mt-6'>Select your position</label>
+              {positions.map(position => (
+                <div key={position.id} className='-mt-2'>
+                  <input
+                    type="radio"
+                    id={`position-${position.id}`}
+                    name="position"
+                    value={position.id}
+                    required
+                    className='leading-7 l-2'
+                    onChange={() => setPosition(position.id)}
+                  />
+                  <label htmlFor={`position-${position.id}`} className='ml-3'>{position.name}</label>
+                </div>
+              ))}
+            </div>
+            <div className='mt-4'>
+              <div className="relative mt-2">
+                <input
+                  type="file"
+                  name="photo"
+                  id="photo"
+                  required
+                  onChange={handlePhotoChange}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+                <div className={`flex items-center space-x-4 mb-12 border ${errors.photo ? 'border-red-500' : 'border-gray-border'}`}>
+                  <button type="button" className="py-2 px-4 border border-gray-border text-gray-border rounded-md">Upload</button>
+                  <span className="w-full text-gray-500 py-[7px]">{photo ? photo.name : 'Upload your photo'}</span>
+                </div>
+                {errors.photo && <p className='text-red-500'>{errors.photo}</p>}
+              </div>
+            </div>
+            <div className='text-center mt-4'>
+              <button
+                type='submit'
+                className="px-[22px] bg-gray-bottom rounded-2xl mb-24 text-white hover:bg-gray-700 active:bg-gray-800"
+              >
+                Sign up
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
+  
