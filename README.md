@@ -24,7 +24,7 @@ The app will be available at: http://localhost:5173/
 # Deployment
 The application is deployed on GitHub Pages. You can view it at the following link:
 
-Demo -[https://abz-test-gc1qlacfb-yaneznayous-projects.vercel.app]
+[Demo] -(https://abz-test-tasks.vercel.app/)
 
 Features
 POST requests: Allows users to register via a form.
